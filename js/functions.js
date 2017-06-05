@@ -11,14 +11,16 @@ function printQuote() {
   var html;
   //call the random quote generator to get the quote
   quote = getRandomQuote();
+
   //create the HTML string to show the quote
   html = '<p class="quote">' + quote.quote + '</p>';
   html += '<p class="source">' + quote.source;
-  //if citation
-  html += '<span class="citation">' + quote.citation + '</span>';
-  //if year
-  html += '<span class="year">' + quote.year + '</span>';
+  //if citation exists
+  if(quote.citation != null){html += '<span class="citation">' + quote.citation + '</span>';}
+  //if year exists
+  if(quote.year != null){html += '<span class="year">' + quote.year + '</span>';}
   html += '</p>';
+
   //send that string to the DOM
   document.getElementById('quote-box').innerHTML = html;
 }
