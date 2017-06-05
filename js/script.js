@@ -2,3 +2,5 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+//Every 5 Sec get a new quote
+setInterval(printQuote,5000);
